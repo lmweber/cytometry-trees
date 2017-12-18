@@ -1,5 +1,5 @@
 ##########################################################################################
-# Script to generate tree of similarities and count table for AML-sim data set
+# Script to generate count tables and hierarchical clustering trees for AML-sim data set
 #
 # Lukas Weber, December 2017
 ##########################################################################################
@@ -268,6 +268,13 @@ str(hclust_out)
 
 # 'as.phylo' converts 'hclust' output object to 'phylo' class
 str(as.phylo(hclust_out))
+
+
+# ---------------------------
+# Save clustering tree object
+# ---------------------------
+
+save(hclust_out, file = file.path(DIR_OUT, "hclust_out.RData"))
 
 
 
