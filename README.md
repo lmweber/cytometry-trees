@@ -10,7 +10,7 @@ This repository contains a script to perform differential abundance testing and 
 
 The AML-sim dataset is a semi-simulated dataset generated for our publication introducing the `diffcyt` framework:
 
-- Weber L. M. et al. (2019), *diffcyt: Differential discovery in high-dimensional cytometry via high-resolution clustering*, Communications Biology, 2:183. [Available here.](https://www.ncbi.nlm.nih.gov/pubmed/31098416)
+- [Weber L. M. et al. (2019), *diffcyt: Differential discovery in high-dimensional cytometry via high-resolution clustering*, Communications Biology, 2:183.](https://www.ncbi.nlm.nih.gov/pubmed/31098416)
 
 The AML-sim dataset contains 3 simulations (5%, 1%, and 0.1% spike-in thresholds for blast cells), and 2 conditions (CN and CBF) vs. healthy. For more details, see Supplementary Note 1 in our publication above.
 
