@@ -24,7 +24,7 @@ The main script [`scripts/AML_sim_clustering_trees.R`](scripts/AML_sim_clusterin
 
 The following are some possible options that can be adjusted within the script, e.g., to change the 'difficulty' of the dataset:
 - select a different simulation: i.e., 5%, 1%, or 0.1% spike-in threshold for the rare population of blast cells
-- select a different condition: i.e., CBF or CN (either of these can then be compared against healthy)
+- select a different condition: i.e., CN or CBF (either of these can then be compared against healthy)
 - use a different number of clusters
 - use a different threshold for the proportion of spike-in cells required to call a cluster a 'true' spike-in cluster (default = 50%)
 - use different parameter settings for generating the hierarchical tree
