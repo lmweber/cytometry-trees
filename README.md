@@ -17,7 +17,7 @@ The AML-sim dataset contains 3 simulations (5%, 1%, and 0.1% spike-in thresholds
 
 ## Script
 
-The main script `AML_sim_clustering_trees.R` contains code to:
+The main script [`scripts/AML_sim_clustering_trees.R`](scripts/AML_sim_clustering_trees.R) contains code to:
 - load the AML-sim dataset
 - run diffcyt pipeline (clustering and testing for differential abundance)
 - generate a hierarchical clustering tree
