@@ -25,6 +25,7 @@ library(ape)
 
 
 dir_output <- "../../outputs"
+if (!dir.exists(dir_output)) dir.create(dir_output)
 
 
 
