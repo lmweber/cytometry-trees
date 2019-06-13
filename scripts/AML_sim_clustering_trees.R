@@ -24,7 +24,7 @@ library(dplyr)
 library(ape)
 
 
-dir_output <- "../outputs"
+dir_output <- "../../outputs"
 
 
 
