@@ -2,7 +2,7 @@
 # Script for Fiona
 # load 'Weber_AML_sim' dataset, run diffcyt pipeline, create hierarchical clustering tree
 # 
-# Lukas Weber, June 2019
+# Lukas Weber, Aug 2019
 ##########################################################################################
 
 
@@ -12,14 +12,12 @@
 # here we use data from one simulation (1% by default) and 2 conditions (CN and healthy); 
 # code can be adjusted below to select the other simulations or conditions
 
-# datasets are currently available as SummarizedExperiments here (one file per simulation):
-# http://imlspenticton.uzh.ch/robinson_lab/HDCytoData/ExperimentHub/Weber_AML_sim_main_5pc_SE.rda
-# http://imlspenticton.uzh.ch/robinson_lab/HDCytoData/ExperimentHub/Weber_AML_sim_main_1pc_SE.rda
-# http://imlspenticton.uzh.ch/robinson_lab/HDCytoData/ExperimentHub/Weber_AML_sim_main_0.1pc_SE.rda
+# datasets are available in HDCytoData package from Bioconductor (version 3.10 onwards)
 
 
-library(SummarizedExperiment)
 library(diffcyt)
+library(HDCytoData)
+library(SummarizedExperiment)
 library(dplyr)
 library(ape)
 
@@ -35,17 +33,9 @@ if (!dir.exists(dir_output)) dir.create(dir_output)
 
 # note: adjust code here if you want to use one of the other simulations
 
-# (note: will update this to load from HDCytoData package instead)
+# loading data from HDCytoData package
 
-download.file(
-  "imlspenticton.uzh.ch/robinson_lab/HDCytoData/ExperimentHub/Weber_AML_sim_main_1pc_SE.rda", 
-  destfile = "Weber_AML_sim_main_1pc_SE.rda"
-)
-
-load("Weber_AML_sim_main_1pc_SE.rda")
-
-# delete file
-unlink("Weber_AML_sim_main_1pc_SE.rda")
+d_SE <- Weber_AML_sim_main_1pc_SE()
 
 
 
@@ -210,7 +200,8 @@ contrast
 
 
 # run tests
-# using default filtering
+# note: using default filtering, which is appropriate for a 2-group comparison (since we
+# have already subsetted the data)
 out_DA <- testDA_edgeR(d_counts, design, contrast)
 
 
